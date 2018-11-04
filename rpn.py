@@ -2,6 +2,8 @@
 
 import operator
 import logging
+import readline
+from colorama import Fore, Back, Style
 
 logging.basicConfig(level=logging.DEBUG)
 
@@ -32,7 +34,8 @@ def calculate(arg):
 			result = function(val1, val2)
 			stack.append(result)
 			#return stack[0]
-		logging.debug(stack)
+		logging.debug(Fore.YELLOW + str(stack))
+		print(Style.RESET_ALL)
 	if len(stack) != 1:
 		raise TypeError("Too many parameters")
 
@@ -41,7 +44,8 @@ def calculate(arg):
 def main():
 		while True:
 				result = calculate(input('rpn calc> '))
-				print(result)
+				print(Fore.GREEN + str(result))
+				print(Style.RESET_ALL)
 
 if __name__ == '__main__':
 	main()
