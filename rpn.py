@@ -9,7 +9,7 @@ operators = {
 	'+': operator.add,
 	'-': operator.sub,
 	'*': operator.mul,
-	'/': operator.floordiv,
+	'/': operator.truediv,
 	'^': operator.pow,
 }
 
@@ -34,7 +34,7 @@ def calculate(arg):
 			#return stack[0]
 		logging.debug(stack)
 	if len(stack) != 1:
-		raise TypeError
+		raise TypeError("Too many parameters")
 
 	return stack.pop()
 

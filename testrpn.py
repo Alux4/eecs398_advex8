@@ -18,6 +18,10 @@ class TestBasics(unittest.TestCase):
 		result = rpn.calculate('48 12 /')
 		self.assertEqual(4, result)
 
+	def test_pow(self):
+		result = rpn.calculate('2 3 ^')
+		self.assertEqual(8, result)
+
 	def test_too_many(self):
 		with self.assertRaises(TypeError):
 			result = rpn.calculate('1 2 3 +')
